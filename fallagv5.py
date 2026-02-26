@@ -1,20 +1,3 @@
-def moduleinstaller():
-    modules = ['requests','boto3','certstream','user_agent','fontstyle','colorama','bs4','selenium','console','html5lib','wget','easygui','zipfile','tabulate','shodan','paramiko','asyncio','aiohttp']
-    for module in modules:
-        try:
-    if sys.version_info[0] < 3:
-        # Untuk Python 2 (jarang, tapi kalau ada)
-        os.system('pip2 install {}'.format(module))
-    else:
-        # Untuk Python 3 – gunakan pip dari virtual environment
-        os.system('pip install {}'.format(module))
-    print(' ')
-    print(' [+] {} has been installed successfully.'.format(module))
-    print(' ')
-except Exception as e:
-    print(' [-] Install {} manually. Error: {}'.format(module, e))
-    print(' ')
-
 import os
 import sys
 import json
@@ -2794,3 +2777,4 @@ def mainmenu():
 if __name__ == '__main__':
 
     mainmenu()
+
