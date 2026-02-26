@@ -2741,7 +2741,10 @@ def mainmenu():
         print(line.center(os.get_terminal_size().columns , " "))
 
     print('\n')
-    choice = input(f'{fr}[{fg}SELECT{fr}]{fw} ➧ ')
+    raw_choice = input(f'{fr}[{fg}SELECT{fr}]{fw} ➧ ')
+    choice = re.sub(r'\D', '', raw_choice)  # Hapus semua non-digit
+     if not choice:
+    choice = '0'
     match int(choice):
         case 1:
             sitesgrabbermenu()
@@ -2777,4 +2780,5 @@ def mainmenu():
 if __name__ == '__main__':
 
     mainmenu()
+
 
